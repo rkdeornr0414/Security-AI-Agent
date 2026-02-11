@@ -10,4 +10,4 @@ No single layer is sufficient. Prompt injection is an unsolved problem in AI sec
 
 
 # OS
-Linux for now
+Linux
