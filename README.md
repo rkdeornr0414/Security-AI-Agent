@@ -12,5 +12,5 @@ No single layer is sufficient. Prompt injection is an unsolved problem in AI sec
 # OS
 Linux
 
-#Design Philosophy
+# Design Philosophy
 This is an advisory-only agent. It never executes commands, never writes to the filesystem, and never modifies system state. It observes, analyzes, and guides.
