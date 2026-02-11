@@ -9,3 +9,5 @@
 No single layer is sufficient. Prompt injection is an unsolved problem in AI security — the LLM can always potentially be tricked. That's why the architectural layers (secrets the agent can never access, output filtering, network restrictions) are more important than trying to make the prompt "un-injectable."
 
 
+# OS
+Linux for now
