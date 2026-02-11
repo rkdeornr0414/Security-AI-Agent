@@ -14,7 +14,7 @@ Linux
 
 # Design Philosophy
 This is an advisory-only agent. It never executes commands, never writes to the filesystem, and never modifies system state. It observes, analyzes, and guides.
-'''
+'''text
 ┌─────────────────────────────────────────────────────────┐
 │              DEFENSE-IN-DEPTH LAYERS                    │
 ├─────────────────────────────────────────────────────────┤
