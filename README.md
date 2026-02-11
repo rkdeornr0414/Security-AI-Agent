@@ -11,12 +11,12 @@ This project was built to break that chain.
 
 The typical attack flow in a misconfigured VPS environment maps to:
 
-T1190 – Exploit Public-Facing Application
-T1110 – Brute Force
-T1078 – Valid Accounts
-T1068 – Privilege Escalation
-T1021 – Remote Services (Lateral Movement)
-T1005 – Data from Local System
+T1190 – Exploit Public-Facing Application \n
+T1110 – Brute Force \n
+T1078 – Valid Accounts \n
+T1068 – Privilege Escalation \n
+T1021 – Remote Services (Lateral Movement) \n
+T1005 – Data from Local System \n
 T1041 – Exfiltration Over C2 Channel
 
 Rather than relying on model behavior alone, this project introduces architectural constraints, layered validation, and strict execution boundaries.
