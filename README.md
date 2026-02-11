@@ -81,3 +81,70 @@ This is an advisory-only agent. It never executes commands, never writes to the 
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
+
+## Structure
+
+```
+Security-AI-Agent/
+├── main.py              # Entry point
+├── settings.py          # Configuration
+├── agent/               # Core agent logic
+│   ├── chat.py          # Conversation manager
+│   ├── config.py        # Config loader
+│   ├── prompt.py        # System prompt builder
+│   └── providers.py     # OpenAI + Anthropic providers
+├── knowledge/           # Security knowledge base
+│   ├── registry.py      # Module registry
+│   ├── wireguard.py     # WireGuard VPN
+│   ├── ssh.py           # SSH hardening
+│   ├── fail2ban.py      # Fail2Ban
+│   ├── ufw.py           # UFW firewall
+│   └── general.py       # General Linux hardening
+└── modules/             # Utilities
+    └── loader.py        # Auto-loads knowledge modules
+```
+
+## Run
+
+### Docker
+
+```bash
+docker build -t linux-security-advisor .
+docker run -it --rm \
+  -e ANTHROPIC_API_KEY=your-key \
+  linux-security-advisor
+```
+
+### Local
+
+```bash
+pip install -r requirements.txt
+export ANTHROPIC_API_KEY=your-key
+python main.py
+```
+
+## Configuration
+
+Edit `settings.py` or use environment variables:
+
+| Variable | Description |
+|---|---|
+| LSA_PROVIDER | openai or anthropic |
+| LSA_MODEL | Model name override |
+| OPENAI_API_KEY | OpenAI API key |
+| OPENAI_BASE_URL | Custom base URL |
+| ANTHROPIC_API_KEY | Anthropic API key |
+
+## Adding Knowledge
+
+Create a new file in `knowledge/`, e.g. `knowledge/docker.py`:
+
+```python
+from knowledge import register
+
+register("Docker Security", """
+Your knowledge content here.
+""")
+```
+
+It auto-loads on startup. No other changes needed.
