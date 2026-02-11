@@ -1,5 +1,29 @@
 # Security-Agent
 
+🚨 Why This Project Exists
+
+Running Clawdbot on a publicly exposed VPS introduces a realistic attack chain.
+Default-bound services are continuously scanned and brute-forced by automated botnets. A single misconfiguration or weak credential path can lead to initial access, privilege escalation, and eventual data exposure.
+
+This project was built to break that chain.
+
+🎯 Threat Model (MITRE ATT&CK Mapping)
+
+The typical attack flow in a misconfigured VPS environment maps to:
+
+T1190 – Exploit Public-Facing Application
+T1110 – Brute Force
+T1078 – Valid Accounts
+T1068 – Privilege Escalation
+T1021 – Remote Services (Lateral Movement)
+T1005 – Data from Local System
+T1041 – Exfiltration Over C2 Channel
+
+Rather than relying on model behavior alone, this project introduces architectural constraints, layered validation, and strict execution boundaries.
+
+The philosophy is simple:
+Assume exposure. Minimize privilege. Contain damage.
+
 # Diagram
 
 
